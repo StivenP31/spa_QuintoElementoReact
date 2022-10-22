@@ -2,14 +2,15 @@ import axios from "axios"
 import jwtDecode from "jwt-decode"
 import { usuario } from "../../states/sliceReducers"
 import {store} from "../../states/store"
+import { cerrarSesion } from "../usuarioAcciones"
  
 
-export const setAuthentucacionToken=(token)=>{
+export const setAuthentucacionToken=(authorization)=>{
 
-    if (token) {
+    if (authorization) {
         
-        axios.defaults.headers.common["Authorization"]=token
-        console.log("token "+token)
+        axios.defaults.headers.common["Authorization"]=authorization
+        
     }else{
         delete axios.defaults.headers.common["Authorization"]
     }
@@ -17,19 +18,24 @@ export const setAuthentucacionToken=(token)=>{
 
 export const getAuthentucacionToken=()=>{
 
-    if (localStorage.token) {
-        setAuthentucacionToken(localStorage.token)
+    if (localStorage.authorization) {
 
-        const decodificado=jwtDecode(localStorage.token)
+        
+        setAuthentucacionToken(localStorage.authorization)
 
+        const decodificado=jwtDecode(localStorage.authorization)
+        
         store.dispatch(usuario({usuario: decodificado, conectado : true}))
-
+        
+        
         const tiempoActual = Math.floor(Date.now()/1000)
-
+        
         if (decodificado.exp < tiempoActual) {
             window.location.href="/"
         }
     }
+    
+
 }
 
 

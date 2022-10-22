@@ -3,6 +3,10 @@ import jwtDecode from "jwt-decode"
 import { setAuthentucacionToken } from "./helpers/token"
 import {LOGIN_POST } from "./helpers/endpoint"
 import { usuario } from "../states/sliceReducers"
+import { useNavigate } from "react-router-dom"
+
+
+
 
 export const autenticacion = (datos) => dispatch => {
     
@@ -31,9 +35,9 @@ export const autenticacion = (datos) => dispatch => {
 
             const decodificado=jwtDecode(authorization)
 
-            console.log(decodificado)  
+             
   
-            dispatch(usuario({usuario: decodificado, conectado : true}))
+            dispatch(usuario({conectado : true , usuario: decodificado }))
             
             resolver(respuesta)
 
@@ -44,4 +48,20 @@ export const autenticacion = (datos) => dispatch => {
         })
 
     })
+}
+
+
+export const cerrarSesion = () =>dispatch=> {
+    
+    
+    localStorage.removeItem("authorization")
+
+    localStorage.removeItem("Rol")
+
+    setAuthentucacionToken(false)
+
+    dispatch(usuario({ conectado :false, usuario: {} }))
+
+    window.location.href="/"
+
 }

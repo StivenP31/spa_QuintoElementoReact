@@ -1,6 +1,6 @@
 
 const RegistrarseFormulario = () => {
-  const formularioRegistro = 
+    const formularioRegistro = 
     
     <div className="container">
    

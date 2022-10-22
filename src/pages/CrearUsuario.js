@@ -6,23 +6,25 @@ const CrearUsuario =()=>{
     const VistaRegistrarse=
     
     <Container className="mt-4 mb-4 justify-content-md-center">
-    <Row className="row justify-content-md-center">
-        <Col sm="12" md="8" lg="6">
-            <Card.Body>
-                    <h3 className="text-center">Registrar Usuario</h3>
+        <Row className="row justify-content-md-center">
+            <Col sm="12" md="8" lg="6">
 
-                    <Link to={"/admin"} className="AtrasIcon">
-                    <i id="AtrasIcon" className="fa-solid fa-chevron-left">back</i>
-                    </Link>
-                    
+                <Card.Body>
 
-                    <RegistrarseFormulario/>
+                        <h3 className="text-center">
+                            Registrar Usuario
+                        </h3>
 
-                    </Card.Body>
+                        <Link to={"/admin"} className="AtrasIcon">
+                            <i id="AtrasIcon" className="fa-solid fa-chevron-left">back</i>
+                        </Link>
 
-    </Col>
+                        <RegistrarseFormulario/>
 
-    </Row>
+                </Card.Body>
+
+            </Col>
+        </Row>
     </Container>
 
 

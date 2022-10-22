@@ -1,13 +1,21 @@
 import { Button, Col, Container } from "react-bootstrap"
+import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
+import { cerrarSesion } from "../Connections/usuarioAcciones";
+
 
 
 const PrincipalAdminIconos = () =>{
+
+        
+
+        const enviarAccion = useDispatch();
+
     const vistaPrincipalAdminIconos =
 
     
 
-        <Container className="row mb-3 mt-3 text-center "  sm="12" md="4" lg="4" xl="4">  
+        <Container className="row mb-3 mt-3 text-center "  sm="12" md="3" lg="3" xl="4">  
 
         <Col >
          
@@ -26,7 +34,7 @@ const PrincipalAdminIconos = () =>{
                 
         
                         <Container>    
-                                <Link to={"#/"}>
+                                <Link to={"/verusuarios"}>
                                 <Container  className="imgUsers justify-content-md-center" > 
                                         <i id="iconAdmin" className="fa-solid fa-users" ></i>
                                         <p className="textUsuario text-center">Ver usuarios</p>       
@@ -47,7 +55,7 @@ const PrincipalAdminIconos = () =>{
                         </Link>
         </Container>
                         
-                        <Button variant="outline-primary mt-3" id="bottonCerrarSesion" type="submit"  >Cerrar sesion</Button>
+                <Button  onClick={()=>enviarAccion(cerrarSesion())} variant="outline-primary mt-3" id="bottonCerrarSesion"  >Cerrar sesion</Button>
                         
 
         </Col>   

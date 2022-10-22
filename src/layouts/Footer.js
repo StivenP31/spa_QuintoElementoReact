@@ -18,7 +18,7 @@ const Footer = () => {
           <h5 className='text-uppercase'>GRUPO G44</h5>
 
           <p>
-          Gracias al Profesor Rodolfo Niño nuevas puertas se nos abren para nuestro futuro 
+          Gracias al Profesor Rodolfo Niño, UNAB y MINTIC nuevas puertas se nos abren para nuestro futuro 
           y un gran sueño comienza hacerse realidad.
           Este proyecto es producto de sus enseñanzas y guía. Hace apenas unos meses no 
           creíamos que podríamos llegar a desarrollar algo similar, lo cual nos emociona, 
@@ -29,10 +29,10 @@ const Footer = () => {
           <h5 className='text-uppercase'>integrantes</h5>
 
           <p>
- *Carime Caroll* - No se de donde sacas tiempo para tantas cosas, *Lolys Sabalza* -como tienes cabeza para esto despues 
- de un dia con pacientes *Eder Perez* - Este pequeño me ah sorprendido y me ah echo enojar tambien, te queremos
- *jonathan Estiben* - Pobre me lo tienen volteando y calvo pero pide permiso para ayudarnos *Noe* - compañero siempre
- dispuesto a ayudar
+      *Carime Caroll* - No se de donde sacas tiempo para tantas cosas, *Lolys Sabalza* -como tienes cabeza para esto despues 
+      de un dia con pacientes *Eder Perez* - Este pequeño me ah sorprendido y me ah echo enojar tambien, te queremos
+      *jonathan Estiben* - Pobre me lo tienen volteando y calvo pero pide permiso para ayudarnos *Noe* - compañero siempre
+      dispuesto a ayudar
 
           </p>
         </MDBCol>
