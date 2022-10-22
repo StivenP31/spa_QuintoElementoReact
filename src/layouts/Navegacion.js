@@ -1,15 +1,16 @@
 // import logo from "../img/android-chrome-512x512.png"
+import { Navbar } from "react-bootstrap";
 import banner from "../img/banner.jpg"
 
 const Navegacion = () => {
   const vistaNav = 
 
     
-    <nav className="col col-lg-12">
+    <Navbar className="col-lg-12">
 
       <img id="imgNav" src={banner} className="img-fluid" alt="banner"></img>
       
-    </nav>
+    </Navbar>
 
 
     // <nav className="navbar navbar-expand-lg bg-light">

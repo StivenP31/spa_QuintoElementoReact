@@ -1,3 +1,8 @@
+a:link, a:visited, a:active {
+
+  text-decoration:none;
+}
+
 #imgNav{
   width:100%
 }
@@ -94,5 +99,94 @@ body{
 
   
   position: bottom;
+
+}
+
+#crearCitas{
+
+  margin-top: 20px;
+
+}
+
+
+
+.textUsuario{
+
+  margin-top: 2%;
+}
+
+
+
+#iconAdmin{
+
+  margin-top: 15%;
+  font-size: 150px;
+}
+
+.imgUsersPlus{
+
+  transition: all 1s;
+  color: black;
+
+}
+
+.imgUsersPlus:hover{
+
+  
+  transform: scale(1.3);
+  color: rgb(0, 99, 16);
+}
+
+.imgUsers{
+
+  transition: all 1s;
+  color: black;
+
+}
+
+.imgUsers:hover{
+
+  
+  transform: scale(1.3);
+  color: rgb(3, 12, 138);
+}
+
+.imgUsersDelete{
+
+  transition: all 1s;
+  color: black;
+
+}
+
+.imgUsersDelete:hover{
+
+  
+  transform: scale(1.3);
+  color: rgb(116, 10, 10);
+}
+
+#bottonCerrarSesion{
+
+  margin-left: 50%;
+
+}
+
+
+
+.AtrasIcon{
+
+  margin-left: 1%;
+  margin-top: 1%;
+  font-size: 15px;
+  transition: all 1s;
+  color: #0d6efd;
+
+}
+
+.AtrasIcon:hover{
+
+  font-size: 18px;
+  color: rgb(14, 31, 177);
+  transform: scale(1.3);
 
 }

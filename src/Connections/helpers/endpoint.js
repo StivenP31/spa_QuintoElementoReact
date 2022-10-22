@@ -1,0 +1,11 @@
+const API_URL="http://localhost:8080"
+
+export const CREAR_USUARIO_POST =API_URL+"/admin"
+export const LOGIN_POST=API_URL+"/login"
+export const VER_USUARIO_ACTIVO_GET=API_URL+"/admin"
+export const VER_TODOS_LOS_USUARIOS_GET=API_URL+"/admin/verusuarios"
+export const DETALLE_USUARIO_GET=API_URL+"/admin/{id}"
+export const ELIMINAR_USUARIO_DELETE=API_URL+"/admin/{id}"
+export const CREAR_HISTORIAL_POST=API_URL+"/historial"
+export const BUSCAR_HISTORIAL_GET=API_URL+"historial/mihistorial"
+export const TODOS_LOS_HISTORIALES=API_URL+"/historial/historialcreado"

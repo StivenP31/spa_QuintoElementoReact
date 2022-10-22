@@ -1,20 +1,29 @@
+import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { RegistrarseFormulario } from "../components/RegistrarseFormulario"
 
 const CrearUsuario =()=>{
     const VistaRegistrarse=
     
-    <div class="container mt-3 mb-3">
-        <div class="row justify-content-md-center">
-            <div class="col col-sm-12 col-md-8 col-lg-6">
-                <div class="card-body">
-                    <h3 class="text-center">Registrar Usuario</h3>
+    <Container className="mt-4 mb-4 justify-content-md-center">
+    <Row className="row justify-content-md-center">
+        <Col sm="12" md="8" lg="6">
+            <Card.Body>
+                    <h3 className="text-center">Registrar Usuario</h3>
+
+                    <Link to={"/admin"} className="AtrasIcon">
+                    <i id="AtrasIcon" className="fa-solid fa-chevron-left">back</i>
+                    </Link>
+                    
+
                     <RegistrarseFormulario/>
 
-                </div>       
-            </div>
+                    </Card.Body>
 
-        </div>
-    </div>
+    </Col>
+
+    </Row>
+    </Container>
 
 
     return VistaRegistrarse
