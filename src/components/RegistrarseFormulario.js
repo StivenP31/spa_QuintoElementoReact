@@ -1,91 +1,228 @@
+import moment from "moment";
+import { useState } from "react";
+import { Button, Container, Form, FormControl, FormGroup, FormLabel} from "react-bootstrap";
 
-const RegistrarseFormulario = () => {
-    const formularioRegistro = 
+const RegistrarseFormulario = ({errores,callback}) => {
+
+    const [nombres,setNombres]=useState("")
+    const [apellidos,setApellidos]=useState("")
+    const [tipoDocumento,setTipoDocumento]=useState("")
+    const [documento,setDocumento]=useState("")
+    const [fechaDeNacimiento,setFechaDeNacimiento]=useState("")
+    const [email,setEmail]=useState("")
+    const [direccion,setDireccion]=useState("")
+    const [celular,setCelular]=useState("")
+    const [nombreRol,setNombreRol]=useState("")
+    const [username,setUsername]=useState("")
+    const [password,setPassword]=useState("")
+
+    const enviarFormulario = (e)=>{
+
+        e.preventDefault();
+
+        callback({nombres,apellidos,tipoDocumento,documento,fechaDeNacimiento,email,direccion,celular,nombreRol,username,password})
+        console.log("ver datos enviados"+nombres)
+        console.log("ver datos enviados"+documento)
+        console.log("ver datos enviados"+nombreRol)
+        console.log("ver datos enviados"+password)
+    }
+
+
+    return (
     
-    <div className="container">
-   
-        <form>
-
-            <div className="mb-3 mb-lg-3 ">
-                <label for="nombres" className="form-label" >Nombres</label>
-                <input type="text" className="form-control" placeholder="nombres" id="nombres" name="nombres" autocomplete="name" required/>
-            </div>
-
-            <div className="mb-3">
-                <label for="Apellidos" className="form-label" >Apellidos</label>
-                <input type="text" className="form-control" placeholder="primer y segundo apellido" id="Apellidos" name="Apellidos" required/>
-            </div>
-
-            <div>
-            <label for="correo" className="form-label" >Tipo de documento</label>
-            <select className="form-select" aria-label="Default select example">
-                <option selected>Elige: </option>
-                <option value="1">Cedula (cc)</option>
-                <option value="2">Cedula Extranjería (CE)</option>
-                
-            </select>
-            <p></p>
-            </div>
-          
-            <div className="mb-3">
-                <label for="documento" className="form-label" >Numero de identificación</label>
-                <input type="number" className="form-control" placeholder="numero de identificación" id="tel" name="document" autocomplete="document" required/>
-            </div>
-
+    <Container className="mb-3 mt-3" sm="12" md="8" lg="6">
+       <Form onSubmit={enviarFormulario}>
             
 
-            <div className="mb-3">
-                <label for="nacimiento">Fecha de nacimiento</label>
-                <input type="date" id="nacimiento"  name="nacimiento"  className="form-control"/>
-            </div>
+                <FormGroup className="mb-3 ">
+                    <Form.Label>Nombres</Form.Label>
+                    <Form.Control
+                    type="text" 
+                    placeholder="ingrese sus nombres"
+                    value={nombres}
+                    onChange={e=>setNombres(e.target.value)}
+                    isInvalid={errores.nombres}
+                    required/>
+                    <Form.Control.Feedback type="invalid">
+                        {errores.nombres}
+                    </Form.Control.Feedback>
+                </FormGroup>
 
-            <div className="mb-3">
-                <label for="email">Correo</label>
-                <input type="email" id="email" placeholder="correo" name="email"  className="form-control"/>
-            </div>
+                <FormGroup className="mb-3 ">
+                    <FormLabel>Apellidos</FormLabel>
+                    <FormControl 
+                    type="text" 
+                    placeholder="Primer y segundo apellido" 
+                    value={apellidos}
+                    onChange={e=>setApellidos(e.target.value)}
+                    isInvalid={errores.apellidos}
+                    required/>
+                    <Form.Control.Feedback type="invalid">
+                        {errores.apellidos}
+                    </Form.Control.Feedback>
+                </FormGroup>
 
-            <div className="mb-3 ">
-                <label for="tel" className="form-label" >Celular</label>
-                <input type="number" className="form-control" placeholder="celular" id="tel" name="tel" autocomplete="tel" required/>
-            </div>
+                <FormGroup>
+                    <FormLabel>Tipo de documento</FormLabel>   
+                    <Form.Control
+                    as="select"  
+                    type="select"
+                    aria-label="Tipo De Documento" 
+                    value={tipoDocumento}
+                    onChange={e=>setTipoDocumento(e.target.value)}
+                    isInvalid={errores.tipoDocumento}
+                    required>
+                        <option value="">seleccione</option>
+                        <option value="CC">CC - (Cedula de ciudadania)</option>
+                        <option value="CE">CE - (Cedula de extranjeria)</option>
+                        
+                    </Form.Control>
 
-            <div className="mb-3 ">
-                <label for="Direccion" className="form-label" >Direccion</label>
-                <input type="text" className="form-control" placeholder="direccion"  id="Direccion" name="Direccion" required/>
-            </div>
-
-
+                    <Form.Control.Feedback type="invalid">
+                        {errores.tipoDocumento}
+                    </Form.Control.Feedback>
+                <p></p>
+                </FormGroup>
             
-            <p><h4>Asignación usuario y contraseña:</h4></p>
-
-            <div>
-            <label for="correo" className="form-label" >Rol</label>
-            <select className="form-select" aria-label="Default select example">
-                <option selected>seleccione</option>
-                <option value="1">Administrador</option>
-                <option value="2">Doctor</option>
-                <option value="3">Recepcion</option>   
-            </select>
-            <p></p>
-            </div>
-
-            <div className="mb-3">
-                <label for="correo" className="form-label" >Usuario</label>
-                <input type="email" className="form-control" id="correo" name="correo" autocomplete="email" required/>
+                <FormGroup className="mb-3 ">
+                    <FormLabel>Numero de documento</FormLabel>
+                    <FormControl 
+                    type="Text" 
+                    placeholder="Documento" 
+                    value={documento}
+                    onChange={e=>setDocumento(e.target.value)}
+                    isInvalid={errores.documento}
+                    required/>
+                    <Form.Control.Feedback type="invalid">
+                        {errores.documento}
+                    </Form.Control.Feedback>  
+                </FormGroup>
                 
-            </div>
+                <FormGroup className="mb-3">
+                    <FormLabel>Fecha de nacimiento</FormLabel>
+                    <FormControl  
+                    className="form-control" 
+                    type="date"
+                    value={moment(fechaDeNacimiento).format('yyyy-MM-DD')}
+                    
+                    onChange={e=>setFechaDeNacimiento(e.target.value)}
+                    isInvalid={errores.fechaDeNacimiento}
+                    required/>
+                    <Form.Control.Feedback type="invalid">
+                        {errores.fechaDeNacimiento}
+                    </Form.Control.Feedback>  
 
-            <div className="mb-3">
-                <label for="password" className="form-label" >Contraseña</label>
-                <input type="password" className="form-control" id="password" name="password"  required/>
-            </div>
+                </FormGroup>
 
-            <button type="submit" className="btn btn-outline-primary mt-3 " >Registrarse</button>
-        
-        </form>
-    </div>
-    
-  return formularioRegistro;
+                <FormGroup className="mb-3 ">
+                    <FormLabel>Correo</FormLabel>
+                    <FormControl 
+                    type="Email" 
+                    placeholder="Correo"
+                    value={email}
+                    onChange={e=>setEmail(e.target.value)}
+                    isInvalid={errores.email}
+                    required/>
+
+                    <Form.Control.Feedback type="invalid">
+                        {errores.email}
+                    </Form.Control.Feedback>  
+
+                </FormGroup>
+
+                <FormGroup className="mb-3 ">
+                    <FormLabel>Direccion</FormLabel>
+                    <FormControl 
+                    type="Text" 
+                    placeholder="Numero de celular" 
+                    value={direccion}
+                    onChange={e=>setDireccion(e.target.value)}
+                    isInvalid={errores.direccion}
+                    required/>
+                    <Form.Control.Feedback type="invalid">
+                        {errores.direccion}
+                    </Form.Control.Feedback>  
+
+                </FormGroup>
+
+                <FormGroup className="mb-3 ">
+                    <FormLabel>Celular</FormLabel>
+                    <FormControl 
+                    type="Text" 
+                    placeholder="Numero de celular" 
+                    value={celular}
+                    onChange={e=>setCelular(e.target.value)}
+                    isInvalid={errores.celular}
+                    required/>
+
+                    <Form.Control.Feedback type="invalid">
+                        {errores.celular}
+                    </Form.Control.Feedback>  
+                </FormGroup>
+
+
+                <FormGroup>
+                    <h5>Asignación usuario y contraseña:</h5>
+                    <FormLabel>Rol</FormLabel>   
+                    <Form.Control
+                    as="select"
+                    type="select"
+                    aria-label="Rol"                     
+                    value={nombreRol}
+                    onChange={e=>setNombreRol(e.target.value)}
+                    isInvalid={errores.nombreRol}
+                    required>
+                        <option value="">seleccione</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Doctor</option>
+                        <option value="3">Recepcion</option>  
+                        
+                    
+                    </Form.Control>
+                    <Form.Control.Feedback type="invalid">
+                        {errores.nombreRol}
+                    </Form.Control.Feedback> 
+                <p></p>
+                </FormGroup>
+
+                <FormGroup className="mb-3 ">
+                    <FormLabel>Usuario</FormLabel>
+                    <FormControl 
+                    type="Text" 
+                    placeholder="Usuario" 
+                    value={username}
+                    onChange={e=>setUsername(e.target.value)}
+                    isInvalid={errores.username}
+                    required/>
+
+                    <Form.Control.Feedback type="invalid">
+                        {errores.username}
+                    </Form.Control.Feedback> 
+                </FormGroup>
+
+                <FormGroup className="mb-3 ">
+                    <FormLabel>Contraseña</FormLabel>
+                    <FormControl 
+                    type="password" 
+                    placeholder="Contraseña" 
+                    value={password}
+                    onChange={e=>setPassword(e.target.value)}
+                    isInvalid={errores.password}
+                    required/>
+
+                    <Form.Control.Feedback type="invalid">
+                        {errores.password}
+                    </Form.Control.Feedback> 
+                </FormGroup>
+
+
+                <Button  type="submit" variant="outline-primary mt-3" >Registrarse</Button>
+            
+            
+
+        </Form>   
+    </Container>
+    )
 };
 
 export { RegistrarseFormulario };

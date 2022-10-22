@@ -27,7 +27,7 @@ function IniciarSesion() {
         
         iniciarSesionAccion(autenticacion({username, password})).then(respuesta=>{
             const {rolusuario} = respuesta.headers
-            console.log("*** Respuesta para validar "+rolusuario)
+            
 
             switch (rolusuario) {
                 case "Administrador":

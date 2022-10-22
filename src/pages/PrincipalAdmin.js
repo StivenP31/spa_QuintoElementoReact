@@ -19,7 +19,7 @@ const PrincipalAdmin = () =>{
            
             { conectado ?(
              <Container className="userAdmin text-end">  
-                <i class="fa-solid fa-screwdriver-wrench"> {usuario.sub}</i>
+                <i className="fa-solid fa-screwdriver-wrench"> {usuario.sub}</i>
             </Container> ):
             ( window.location.href="/" ) }
             <h3 className="text-center">Administrador</h3>

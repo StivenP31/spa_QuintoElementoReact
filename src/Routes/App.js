@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import {Navegacion} from "../layouts/Navegacion"
  import { IniciarSesion } from '../pages/IniciarSesion';
 import  {Footer} from "../layouts/Footer"
-import {CrearUsuario} from "../pages/CrearUsuario"
+import {Registrarusuario} from "../pages/RegistrarUsuario"
 import { CrearCitas } from "../pages/CrearCitas"
 import { CrearHistorial } from '../pages/CrearHistorial';
 import { PrincipalAdmin } from '../pages/PrincipalAdmin';
@@ -29,7 +29,7 @@ function App() {
 
           <Route element={<RutaPrivada/>}>
           <Route path='/admin' element={<PrincipalAdmin/>}/>
-            <Route path='/registrarusuario' element={<CrearUsuario/>}/>
+            <Route path='/registrarusuario' element={<Registrarusuario/>}/>
             <Route path='/verusuarios' element={<VerUsuarios/>}/>
             <Route path='/admin/:id' element={<UsuarioDetalle/>}/>
           </Route>
