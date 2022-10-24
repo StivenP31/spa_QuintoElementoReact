@@ -15,6 +15,8 @@ import { getAuthentucacionToken } from '../Connections/helpers/token';
 import { RutaPrivada } from './RutaPrivada';
 import { VerUsuarios } from '../pages/VerUsuarios';
 import { UsuarioDetalle } from '../pages/UsuarioDetalle';
+import { EliminarUsuariosPagina } from '../pages/EliminarUsuariosPagina';
+
 
 getAuthentucacionToken()
 
@@ -29,9 +31,10 @@ function App() {
 
           <Route element={<RutaPrivada/>}>
           <Route path='/admin' element={<PrincipalAdmin/>}/>
-            <Route path='/registrarusuario' element={<Registrarusuario/>}/>
-            <Route path='/verusuarios' element={<VerUsuarios/>}/>
+            <Route path='/admin/registrarusuario' element={<Registrarusuario/>}/>
+            <Route path='/admin/verusuarios' element={<VerUsuarios/>}/>
             <Route path='/admin/:id' element={<UsuarioDetalle/>}/>
+            <Route path='/admin/eliminarusuariopagina' element={<EliminarUsuariosPagina/>}/>
           </Route>
         </Routes>
         <Footer />

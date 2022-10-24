@@ -22,7 +22,7 @@ const PrincipalAdminIconos = () =>{
                                 
                                         
                 <Container>  
-                        <Link to={"/registrarusuario"}> 
+                        <Link to={"/admin/registrarusuario"}> 
                         <Container  className="imgUsersPlus"> 
                                 <i id="iconAdmin" className="fa-solid fa-user-plus" ></i>
                                 <p className="textUsuario">Agregar Usuario</p>       
@@ -34,7 +34,7 @@ const PrincipalAdminIconos = () =>{
                 
         
                         <Container>    
-                                <Link to={"/verusuarios"}>
+                                <Link to={"/admin/verusuarios"}>
                                 <Container  className="imgUsers justify-content-md-center" > 
                                         <i id="iconAdmin" className="fa-solid fa-users" ></i>
                                         <p className="textUsuario text-center">Ver usuarios</p>       
@@ -47,7 +47,7 @@ const PrincipalAdminIconos = () =>{
         <Col >
        
         <Container text-center >   
-                        <Link to={"#/"}> 
+                        <Link to={"/admin/eliminarusuariopagina"}> 
                         <Container  className="imgUsersDelete"> 
                                 <i id="iconAdmin" className="fa-solid fa-user-minus" ></i>
                                 <p className="textUsuario">Eliminar Usuario</p>       

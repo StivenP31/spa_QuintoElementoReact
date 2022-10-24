@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { VER_TODOS_LOS_USUARIOS_GET } from "../Connections/helpers/endpoint";
-import {VerUsuariosLista} from "../components/VerUsuariosLista"
+
+import { VerUsuariosEliminar } from "../components/VerUsuariosEliminar";
 
 
 
-const VerUsuarios =()=>{
+const EliminarUsuariosPagina =()=>{
     
     const [usuarios, setUsuarios] = useState([])
     const [buscando, setBuscando] = useState(true)
@@ -37,7 +38,7 @@ const VerUsuarios =()=>{
     <Container className="mt-4 mb-4 ">
         <Row className="row justify-content-md-center">
             <Col sm="10" md="10" lg="8">
-            <h3 className="text-center">Usuarios</h3>
+            <h3 className="text-center">Eliminar Usuarios</h3>
             <Link to={"/admin"} className="AtrasIcon">
                 <i id="AtrasIcon" className="fa-solid fa-chevron-left">back</i>
             </Link>
@@ -48,7 +49,7 @@ const VerUsuarios =()=>{
                     <Container className="mt-4 justify-content-md-center" >       
                         
                     </Container>
-                    {usuarios.map(usuario=> <VerUsuariosLista key={usuario.idUsuario} usuario={usuario} editable={false}/>) }
+                    {usuarios.map(usuario=> <VerUsuariosEliminar key={usuario.idUsuario} usuario={usuario} editable={true}/>) }
                 </Card.Body>
                 
             </Col>
@@ -57,4 +58,4 @@ const VerUsuarios =()=>{
    )   
 }
 
-export {VerUsuarios}
+export {EliminarUsuariosPagina}

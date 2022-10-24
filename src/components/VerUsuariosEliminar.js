@@ -1,14 +1,14 @@
 import { Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom';
 
+import { EliminarPartidoBoton } from './BotonEliminar';
 
-const VerUsuariosLista =({usuario})=> {
+const VerUsuariosEliminar =({usuario, editable})=> {
    const listaUsuarios=
         
     <Container>
 
-        <Link to={`/admin/${usuario.idUsuario}`}>
+        
             <Table className='TablaUsuarios'  bordered hover size="sm" >
 
                     <thead className='TituloTabla'>
@@ -29,14 +29,16 @@ const VerUsuariosLista =({usuario})=> {
                         <td>{usuario.rolEntity.nombreRol}</td>
                     </tr>
                 </tbody>
-
+            { editable && usuario.id ===1 ? 
+            ""
+            : <EliminarPartidoBoton  id={usuario.idUsuario} nombre={usuario.nombres} />}
             </Table>
         
-        </Link>
+   
 
     </Container>
 
     return listaUsuarios;
 }
 
-export {VerUsuariosLista}
+export {VerUsuariosEliminar}

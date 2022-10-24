@@ -10,19 +10,21 @@ import { usuario } from "../states/sliceReducers"
 
 export const autenticacion = (datos) => dispatch => {
     
-    console.log( "autenticacion" + datos)
+    
 
     return new Promise((resolver , rechazar)=>{
-
+        
         console.log("Crea la promesa") 
 
         axios.post(LOGIN_POST, datos, 
             {headers: {'Accept': 'application/json'  , "Content-Type":"application/json"}})
             .then(respuesta=>{
 
-                console.log("respuesta "+ datos.rolusuario)
-            
+                console.log("**** datos "+ datos.username)
 
+                console.log("******respuesta " + respuesta.headers )
+            
+                
             const {authorization} = respuesta.headers
             const {rolusuario} = respuesta.headers
                 

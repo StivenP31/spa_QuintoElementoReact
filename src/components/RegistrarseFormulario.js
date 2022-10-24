@@ -104,7 +104,7 @@ const RegistrarseFormulario = ({errores,callback}) => {
                     className="form-control" 
                     type="date"
                     value={moment(fechaDeNacimiento).format('yyyy-MM-DD')}
-                    
+                    max={moment().format('yyyy-MM-DD')}
                     onChange={e=>setFechaDeNacimiento(e.target.value)}
                     isInvalid={errores.fechaDeNacimiento}
                     required/>

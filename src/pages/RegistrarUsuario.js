@@ -8,7 +8,7 @@ import { CREAR_USUARIO_POST } from "../Connections/helpers/endpoint";
 const Registrarusuario =()=>{
     
     const [errores, setErrores] = useState({})
-    const navegar = useNavigate
+    const navegar = useNavigate()
     
     const registro = ({nombres,apellidos,tipoDocumento,documento,fechaDeNacimiento,email,direccion,celular,nombreRol,username,password}) =>{
 
