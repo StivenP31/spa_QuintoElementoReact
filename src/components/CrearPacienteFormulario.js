@@ -76,7 +76,9 @@ const CrearPacientesFormulario = ({errores, callback}) =>{
                         <option value="">seleccione</option>
                         <option value="CC">CC - (Cedula de ciudadania)</option>
                         <option value="CE">CE - (Cedula de extranjeria)</option>
-                        
+                        <option value="TI">TI - (Tarjeta de identidad)</option>
+                        <option value="RC">RC - (Registro civil)</option>
+                        <option value="pp">PP - (Pasaporte)</option>
                     </Form.Control>
 
                     <Form.Control.Feedback type="invalid">
