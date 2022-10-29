@@ -17,7 +17,10 @@ export const VER_CITAS_GET=API_URL+"/citas/leercitas"
 export const DETALLE_PACIENTE_GET=API_URL+"/recepcion"
 
 
+
+
 //Endopoint doctor
+export const CONSULTORIO_GET=API_URL+"/citas/consultorio"
 export const CREAR_HISTORIAL_POST=API_URL+"/historial"
 export const BUSCAR_HISTORIAL_GET=API_URL+"historial/mihistorial"
 export const TODOS_LOS_HISTORIALES=API_URL+"/historial/historialcreado"

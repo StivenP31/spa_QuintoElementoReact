@@ -23,6 +23,8 @@ import { VerCitas } from '../pages/VerCitas';
 import { PacienteDetalle } from '../pages/DetallePaciente.';
 import { PrincipalDoctor } from '../pages/PrincipalDoctor';
 
+import { Consultorio101 } from '../components/Consultorio101';
+
 
 getAuthentucacionToken()
 
@@ -54,6 +56,7 @@ function App() {
           {/* {medico} */}
           <Route path='/doctor' element={<PrincipalDoctor/>}/>  
           <Route path='/recepcion/crearhistorial' element={<CrearHistorial/>}/>
+          <Route path='/citas/consultorio/101' element={<Consultorio101/>}/>
           </Route>
         </Routes>
         <Footer />

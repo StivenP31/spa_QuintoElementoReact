@@ -1,12 +1,13 @@
+
 import { Button, Col, Container } from "react-bootstrap"
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 import { cerrarSesion } from "../Connections/usuarioAcciones";
 
 
-
 const PrincipalDoctorIconos = () =>{
 
+             
         
 
         const enviarAccion = useDispatch();
@@ -17,17 +18,17 @@ const PrincipalDoctorIconos = () =>{
         <Container className="row mb-3 mt-3 text-center "  sm="12" md="3" lg="3" xl="4">  
 
                 <Col >
+                <Container>  
+                        <Link to={`/citas/consultorio/101`}> 
+                        <Container  className="imgUsersPlus" > 
+                                <i id="iconAdmin" className="fa-solid fa-hospital" ></i>
+                                <p className="textUsuario">Consultorio 101</p>       
+                        </Container></Link> 
+                            
+                </Container>        
                 
-                
-                                                
-                        <Container>  
-                                <Link to={"#/"}> 
-                                <Container  className="imgUsersPlus"> 
-                                        <i id="iconAdmin" className="fa-solid fa-hospital" ></i>
-                                        <p className="textUsuario">Consultorio 101</p>       
-                                </Container></Link>
-                                                    
-                        </Container>
+                                               
+                  
                 </Col>           
                 <Col >
                         

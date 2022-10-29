@@ -22,7 +22,7 @@ const CrearCitas = () =>{
                 console.log(respuesta)
                 navegar("/recepcion")
             }).catch(error=>{
-                setErrores({new: error.response.data.message});
+                setErrores({ingresar :"El pciente no esta regustrado"});
 
             })
     } 
