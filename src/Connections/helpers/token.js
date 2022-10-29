@@ -31,6 +31,7 @@ export const getAuthentucacionToken=()=>{
         const tiempoActual = Math.floor(Date.now()/1000)
         
         if (decodificado.exp < tiempoActual) {
+            store.dispatch(cerrarSesion())
             window.location.href="/"
         }
     }

@@ -17,6 +17,11 @@ import { VerUsuarios } from '../pages/VerUsuarios';
 import { UsuarioDetalle } from '../pages/UsuarioDetalle';
 import { EliminarUsuariosPagina } from '../pages/EliminarUsuariosPagina';
 import { PrincipalRecepcion } from '../pages/PrincipalRecepcion';
+import { CrearPaciente } from '../pages/CrearPacientes';
+import { VerPacientes } from '../pages/VerPacientes';
+import { VerCitas } from '../pages/VerCitas';
+import { PacienteDetalle } from '../pages/DetallePaciente.';
+import { PrincipalDoctor } from '../pages/PrincipalDoctor';
 
 
 getAuthentucacionToken()
@@ -39,6 +44,16 @@ function App() {
             <Route path='/admin/eliminarusuariopagina' element={<EliminarUsuariosPagina/>}/>
             {/* Recepcion */}
           <Route path='/recepcion' element={<PrincipalRecepcion/>}/>  
+          <Route path='/recepcion/crearcita' element={<CrearCitas/>}/>
+          <Route path='/recepcion/crearpaciente' element={<CrearPaciente/>}/>
+          <Route path='/recepcion/verpacientes' element={<VerPacientes/>}/>
+          <Route path='/recepcion/crearcita' element={<CrearCitas/>}/>
+          <Route path='/recepcion/vercita' element={<VerCitas/>}/>
+          <Route path='/recepcion/:id' element={<PacienteDetalle/>}/>
+
+          {/* {medico} */}
+          <Route path='/doctor' element={<PrincipalDoctor/>}/>  
+          <Route path='/recepcion/crearhistorial' element={<CrearHistorial/>}/>
           </Route>
         </Routes>
         <Footer />

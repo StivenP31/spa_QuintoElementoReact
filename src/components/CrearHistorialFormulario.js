@@ -14,7 +14,7 @@ const CrearHistorialFormulario = () => {
             <div className="col">    
                 
                     <div className="mb-3">
-                        <label for="documento" className="form-label" >Numero de identificación</label>
+                        <label for="documento" className="form-label" >Número de identificación</label>
                         <input type="number" className="form-control" placeholder="numero de identificación" id="tel" name="document" autocomplete="document" required/>
                     </div>
 

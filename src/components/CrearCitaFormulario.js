@@ -1,98 +1,154 @@
-import {  Col, Container, Form, Row } from "react-bootstrap";
+import moment from "moment";
+import {  useState } from "react";
+import {  Col, Container, Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap";
 
 
 
-const CrearCitaFormulario = () => {
-    const formularioCrearCita = 
-
-<Container className="justify-content-md-center">
-
-<Form>
-
-    <Row>
+const CrearCitaFormulario = ({errores,callback}) => {
     
-    <Col className="col-md-6 col-lg-6 col-xl-6 ">
+    const [numeroDeDocumento, setNumeroDeDocumento] = useState("")
+    const [consultorio,setConsultorio]=useState("")
+    const [fechaDeCita,setFechaDeCita]=useState("")
+    const [hora,setHora]=useState("")
+    const [tipoDeCita,setTipoDeCita]=useState("")
+    const [notas,setNotas]=useState("")
+
+
+    const enviarFormulario = (e) => {
+
+        e.preventDefault();
+
+        callback({numeroDeDocumento,consultorio,fechaDeCita,hora,notas,tipoDeCita})
+    }
     
-                <Form.Group className="mb-3">
-                    <label for="cita">Fecha de la cita</label>
-                    <input type="date" id="cita"  name="cita"  className="form-control" required/>
-                </Form.Group>
+    return (
 
-                <div className="mb-3">
-                    <label for="documento" className="form-label" >Numero de identificación</label>
-                    <input type="number" className="form-control" placeholder="numero de identificación" id="tel" name="document" autocomplete="document" required/>
-                </div>
+        
 
-                <div>
-                    <label for="correo" className="form-label" >Estado de la cita</label>
-                        <select className="form-select" aria-label="Default select example" required>
-                            <option selected>seleccione</option>
-                            <option value="Confirmada">Confirmada</option>
-                            <option value="Cancelada">Cancelada</option>
-                             
-                        </select>
-                <p></p>
-                </div>
+        <Form onSubmit={enviarFormulario}>
 
-
+            <Row>
+            <Container className="justify-content-md-center">
+                <Col className="col-md-12 col-lg-12 col-xl-12 ">
             
-          
-            </Col>
+                <FormGroup className="mb-3">
+                    <FormLabel>Fecha de cita</FormLabel>
+                    <FormControl
+                    className="form-control" 
+                    type="date"
+                    value={moment(fechaDeCita).format('yyyy-MM-DD')}
+                    min={moment().format('yyyy-MM-DD')}
+                    onChange={e=>setFechaDeCita(e.target.value)}
+                    
+                    required/>
 
-        
-        <div className="col-md-6 col-lg-6 col-xl-6 ">
-            <div className="col"> 
-                
-                <div className="mb-3">
-                        <label for="nacimiento">Hora de la consulta</label>
-                        <input type="time" id="nacimiento"  name="nacimiento"  className="form-control" required/>
-                </div>
 
-                <div>
-                    <label for="correo" className="form-label" >Tipo de cita</label>
-                        <select className="form-select" aria-label="Default select example" required>
-                            <option selected>seleccione</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Doctor</option>
-                            <option value="3">Recepcion</option>   
-                        </select>
+            </FormGroup>
+
+            <FormGroup className="mb-3 ">
+                    <FormLabel>Número de documento</FormLabel>
+                    <FormControl 
+                    type="Text" 
+                    placeholder="Documento" 
+                    value={numeroDeDocumento}
+                    onChange={e=>setNumeroDeDocumento(e.target.value)}
+                   
+                    required/>
+
+                </FormGroup>
+
+
+                <FormGroup>
+                    
+                    <FormLabel>Tipo de cita</FormLabel>   
+                    <Form.Control
+                    as="select"
+                    type="select"
+                    aria-label="cita"                     
+                    value={tipoDeCita}
+                    onChange={e=>setTipoDeCita(e.target.value)}
+                  
+                    required>
+                        <option value="">seleccione</option>
+                        <option value="Prioritaria - Medicina General">Prioritaria - Medicina General</option>
+                        <option value="Medicina General">Medicina General</option>
+                        <option value="RCV - Medicina General">RCV - Medicina General</option>
+                    </Form.Control>
+
                 <p></p>
-                </div>
+                </FormGroup>
 
-                <div>
-                    <label for="correo" className="form-label" >Tipo de cita</label>
-                        <select className="form-select" aria-label="Default select example" required>
-                            <option selected>seleccione</option>
-                            <option value="Prioritaria - Medicina General">Prioritaria - Medicina General</option>
-                            <option value="Medicina Genera">Medicina General</option>
-                            <option value="RCV">RCV - Medicina General</option>
-                             
-                        </select>
-                <p></p>
-                </div>
+
+
+                    
                 
+                </Col>
+                
+                </Container>
+                
+                    
+                    
 
-        
-        
-        </div>
-        
-        </div>
-        
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label">Notas:</label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-        
+                        <FormGroup className="mb-3 ">
+                            <FormLabel>Hora</FormLabel>
+                            <FormControl 
+                            type="Time" 
+                            placeholder="Hora de la cita" 
+                            value={hora}
+                            onChange={e=>setHora(e.target.value)}
+                        
+                            required/>
+
+   
+                        </FormGroup>
+
+                        <FormGroup>
+                            <FormLabel>numero De Consultorio</FormLabel>   
+                            <Form.Control
+                            as="select"
+                            type="select"
+                            aria-label="cita"                     
+                            value={consultorio}
+                            onChange={e=>setConsultorio(e.target.value)}
+                           
+                            required>
+                                <option value="">Elige</option>
+                                <option value="101">Consultorio 101</option>
+                                <option value="102">Consultorio 102</option>
+                                <option value="103"> Consultorio 103</option>  
+                                
+                            
+                            </Form.Control>
+
+                            <p></p>
+                        </FormGroup>
+                     {/* Separacion */}
+            
+                    
+                <FormGroup className="mb-3 ">
+                            <FormLabel>Notas :</FormLabel>
+                            <FormControl
+                            as="textarea"
+                            rows={3} 
+                            type="Text" 
+                            placeholder="Notas" 
+                            value={notas}
+                            onChange={e=>setNotas(e.target.value)}
+                            
+                            required/>
+
+  
+                        </FormGroup>
             </Row>
-        <button type="submit" className="btn btn-outline-primary mt-3 " >Registrarse</button>
-    </Form>    
+                <button type="submit" className="btn btn-outline-primary mt-3 " >Registrarse</button>
+        </Form>    
 
-</Container>
-
+        
+)
         
       
       
-    return formularioCrearCita;
+    
   }
   
   export { CrearCitaFormulario };

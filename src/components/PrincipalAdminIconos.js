@@ -55,7 +55,7 @@ const PrincipalAdminIconos = () =>{
                         </Link>
         </Container>
                         
-                <Button  onClick={()=>enviarAccion(cerrarSesion())} variant="outline-primary mt-3" id="bottonCerrarSesion"  >Cerrar sesion</Button>
+                <Button  onClick={()=>enviarAccion(cerrarSesion())} variant="outline-primary mt-3" id="bottonCerrarSesion"  >Cerrar sesión</Button>
                         
 
         </Col>   

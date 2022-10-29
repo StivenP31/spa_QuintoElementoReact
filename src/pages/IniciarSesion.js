@@ -37,7 +37,7 @@ function IniciarSesion() {
                     navegar("/recepcion")
                     break
                 case "Doctor":
-                    navegar("/registrarusuario")
+                    navegar("/doctor")
                      break    
                 default:
                     break;

@@ -2,34 +2,35 @@ import moment from "moment";
 import { useState } from "react";
 import { Button, Container, Form, FormControl, FormGroup, FormLabel} from "react-bootstrap";
 
-const RegistrarseFormulario = ({errores,callback}) => {
 
-    const [nombres,setNombres]=useState("")
-    const [apellidos,setApellidos]=useState("")
-    const [tipoDocumento,setTipoDocumento]=useState("")
-    const [documento,setDocumento]=useState("")
+const CrearPacientesFormulario = ({errores, callback}) =>{
+
+    const [nombre, setNombre]=useState("")
+    const [apellido,setApellido]=useState("")
+    const [tipoDeDocumento,setTipoDeDocumento]=useState("")
+    const [numeroDeDocumento,setNumeroDeDocumento]=useState("")
     const [fechaDeNacimiento,setFechaDeNacimiento]=useState("")
-    const [email,setEmail]=useState("")
+    const [edad,setEdad]=useState("")
+    const [sexo,setSexo]=useState("")
+    const [correo,setCorreo]=useState("")
+    const [telefonoDeContacto,setTelefonoDeContacto]=useState("")
     const [direccion,setDireccion]=useState("")
-    const [celular,setCelular]=useState("")
-    const [nombreRol,setNombreRol]=useState("")
-    const [username,setUsername]=useState("")
-    const [password,setPassword]=useState("")
+    
 
     const enviarFormulario = (e)=>{
 
         e.preventDefault();
 
-        callback({nombres,apellidos,tipoDocumento,documento,fechaDeNacimiento,email,direccion,celular,nombreRol,username,password})
-        console.log("ver datos enviados"+nombres)
-        console.log("ver datos enviados"+documento)
-        console.log("ver datos enviados"+nombreRol)
-        console.log("ver datos enviados"+password)
+        callback({nombre,apellido,sexo,fechaDeNacimiento,edad,numeroDeDocumento,tipoDeDocumento,telefonoDeContacto,correo,direccion})
+        console.log("ver datos enviados"+nombre)
+        console.log("ver datos enviados"+apellido)
+        console.log("ver datos enviados"+sexo)
+       
     }
 
 
     return (
-    
+
     <Container className="mb-3 mt-3" sm="12" md="8" lg="6">
        <Form onSubmit={enviarFormulario}>
             
@@ -38,9 +39,9 @@ const RegistrarseFormulario = ({errores,callback}) => {
                     <Form.Label>Nombres</Form.Label>
                     <Form.Control
                     type="text" 
-                    placeholder="ingrese sus nombres"
-                    value={nombres}
-                    onChange={e=>setNombres(e.target.value)}
+                    placeholder="Ingrese los nombres del paciente"
+                    value={nombre}
+                    onChange={e=>setNombre(e.target.value)}
                     isInvalid={errores.nombres}
                     required/>
                     <Form.Control.Feedback type="invalid">
@@ -52,9 +53,9 @@ const RegistrarseFormulario = ({errores,callback}) => {
                     <FormLabel>Apellidos</FormLabel>
                     <FormControl 
                     type="text" 
-                    placeholder="Primer y segundo apellido" 
-                    value={apellidos}
-                    onChange={e=>setApellidos(e.target.value)}
+                    placeholder="Primer y segundo apellido del paciente" 
+                    value={apellido}
+                    onChange={e=>setApellido(e.target.value)}
                     isInvalid={errores.apellidos}
                     required/>
                     <Form.Control.Feedback type="invalid">
@@ -67,9 +68,9 @@ const RegistrarseFormulario = ({errores,callback}) => {
                     <Form.Control
                     as="select"  
                     type="select"
-                    aria-label="Tipo De Documento" 
-                    value={tipoDocumento}
-                    onChange={e=>setTipoDocumento(e.target.value)}
+                    aria-label="Tipo De Documento del paciente" 
+                    value={tipoDeDocumento}
+                    onChange={e=>setTipoDeDocumento(e.target.value)}
                     isInvalid={errores.tipoDocumento}
                     required>
                         <option value="">seleccione</option>
@@ -88,13 +89,13 @@ const RegistrarseFormulario = ({errores,callback}) => {
                     <FormLabel>Número de documento</FormLabel>
                     <FormControl 
                     type="Text" 
-                    placeholder="Documento" 
-                    value={documento}
-                    onChange={e=>setDocumento(e.target.value)}
-                    isInvalid={errores.documento}
+                    placeholder="Documento del paciente" 
+                    value={numeroDeDocumento}
+                    onChange={e=>setNumeroDeDocumento(e.target.value)}
+                    isInvalid={errores.numeroDeDocumento}
                     required/>
                     <Form.Control.Feedback type="invalid">
-                        {errores.documento}
+                        {errores.numeroDeDocumento}
                     </Form.Control.Feedback>  
                 </FormGroup>
                 
@@ -115,32 +116,55 @@ const RegistrarseFormulario = ({errores,callback}) => {
                 </FormGroup>
 
                 <FormGroup className="mb-3 ">
-                    <FormLabel>Correo electrónico</FormLabel>
+                    <FormLabel>Edad</FormLabel>
                     <FormControl 
-                    type="Email" 
-                    placeholder="Correo"
-                    value={email}
-                    onChange={e=>setEmail(e.target.value)}
-                    isInvalid={errores.email}
+                    type="Text" 
+                    placeholder="Edad"
+                    value={edad}
+                    onChange={e=>setEdad(e.target.value)}
+                    isInvalid={errores.edad}
                     required/>
 
                     <Form.Control.Feedback type="invalid">
-                        {errores.email}
+                        {errores.edad}
                     </Form.Control.Feedback>  
 
                 </FormGroup>
 
+                <FormGroup>
+                    <FormLabel>Sexo</FormLabel>   
+                    <Form.Control
+                    as="select"
+                    type="select"
+                    aria-label="Rol"                     
+                    value={sexo}
+                    onChange={e=>setSexo(e.target.value)}
+                    isInvalid={errores.sexo}
+                    required>
+                        <option value="">seleccione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="No Binario">No binario</option>  
+                        
+                    
+                    </Form.Control>
+                    <Form.Control.Feedback type="invalid">
+                        {errores.sexo}
+                    </Form.Control.Feedback> 
+                <p></p>
+                </FormGroup>
+
                 <FormGroup className="mb-3 ">
-                    <FormLabel>Dirección</FormLabel>
+                    <FormLabel>Correo electrónico</FormLabel>
                     <FormControl 
-                    type="Text" 
-                    placeholder="Numero de celular" 
-                    value={direccion}
-                    onChange={e=>setDireccion(e.target.value)}
-                    isInvalid={errores.direccion}
+                    type="Email" 
+                    placeholder="Correo electrónico" 
+                    value={correo}
+                    onChange={e=>setCorreo(e.target.value)}
+                    isInvalid={errores.correo}
                     required/>
                     <Form.Control.Feedback type="invalid">
-                        {errores.direccion}
+                        {errores.correo}
                     </Form.Control.Feedback>  
 
                 </FormGroup>
@@ -149,71 +173,36 @@ const RegistrarseFormulario = ({errores,callback}) => {
                     <FormLabel>Celular</FormLabel>
                     <FormControl 
                     type="Text" 
-                    placeholder="Numero de celular" 
-                    value={celular}
-                    onChange={e=>setCelular(e.target.value)}
-                    isInvalid={errores.celular}
+                    placeholder="Número de celular" 
+                    value={telefonoDeContacto}
+                    onChange={e=>setTelefonoDeContacto(e.target.value)}
+                    isInvalid={errores.telefonoDeContacto}
                     required/>
 
                     <Form.Control.Feedback type="invalid">
-                        {errores.celular}
+                        {errores.telefonoDeContacto}
                     </Form.Control.Feedback>  
                 </FormGroup>
 
 
-                <FormGroup>
-                    <h5>Asignación usuario y contraseña:</h5>
-                    <FormLabel>Rol</FormLabel>   
-                    <Form.Control
-                    as="select"
-                    type="select"
-                    aria-label="Rol"                     
-                    value={nombreRol}
-                    onChange={e=>setNombreRol(e.target.value)}
-                    isInvalid={errores.nombreRol}
-                    required>
-                        <option value="">seleccione</option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Doctor</option>
-                        <option value="3">Recepcion</option>  
-                        
-                    
-                    </Form.Control>
-                    <Form.Control.Feedback type="invalid">
-                        {errores.nombreRol}
-                    </Form.Control.Feedback> 
-                <p></p>
-                </FormGroup>
+               
 
                 <FormGroup className="mb-3 ">
-                    <FormLabel>Usuario</FormLabel>
+                    <FormLabel>Dirección</FormLabel>
                     <FormControl 
                     type="Text" 
-                    placeholder="Usuario" 
-                    value={username}
-                    onChange={e=>setUsername(e.target.value)}
-                    isInvalid={errores.username}
+                    placeholder="Dirección" 
+                    value={direccion}
+                    onChange={e=>setDireccion(e.target.value)}
+                    isInvalid={errores.direccion}
                     required/>
 
                     <Form.Control.Feedback type="invalid">
-                        {errores.username}
+                        {errores.direccion}
                     </Form.Control.Feedback> 
                 </FormGroup>
 
-                <FormGroup className="mb-3 ">
-                    <FormLabel>Contraseña</FormLabel>
-                    <FormControl 
-                    type="password" 
-                    placeholder="Contraseña" 
-                    value={password}
-                    onChange={e=>setPassword(e.target.value)}
-                    isInvalid={errores.password}
-                    required/>
-
-                    <Form.Control.Feedback type="invalid">
-                        {errores.password}
-                    </Form.Control.Feedback> 
-                </FormGroup>
+                
 
 
                 <Button  type="submit" variant="outline-primary mt-3" >Registrarse</Button>
@@ -221,8 +210,11 @@ const RegistrarseFormulario = ({errores,callback}) => {
             
 
         </Form>   
-    </Container>
-    )
-};
+    </Container>              
 
-export { RegistrarseFormulario };
+
+    )
+
+}
+
+export {CrearPacientesFormulario}

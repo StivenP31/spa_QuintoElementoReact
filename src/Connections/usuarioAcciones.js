@@ -55,7 +55,6 @@ export const autenticacion = (datos) => dispatch => {
 
 export const cerrarSesion = () =>dispatch=> {
     
-    
     localStorage.removeItem("authorization")
 
     localStorage.removeItem("Rol")

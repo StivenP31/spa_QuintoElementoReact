@@ -22,7 +22,7 @@ const PrincipalRecepcionIconos = () =>{
                                 
                                         
                 <Container>  
-                        <Link to={"#/"}> 
+                        <Link to={"/recepcion/crearpaciente"}> 
                         <Container  className="imgUsersPlus"> 
                                 <i id="iconAdmin" className="fa-solid fa-hospital-user" ></i>
                                 <p className="textUsuario">Crear Paciente</p>       
@@ -34,7 +34,7 @@ const PrincipalRecepcionIconos = () =>{
                     
             
                             <Container>    
-                                    <Link to={"#/"}>
+                                    <Link to={"/recepcion/verpacientes"}>
                                     <Container  className="imgUsers justify-content-md-center" > 
                                             <i id="iconAdmin" className="fa-solid fa-users" ></i>
                                             <p className="textUsuario text-center">Ver pacientes</p>       
@@ -48,7 +48,7 @@ const PrincipalRecepcionIconos = () =>{
             <Col >
             
                     <Container>    
-                            <Link to={"#/"}>
+                            <Link to={"/recepcion/crearcita"}>
                             <Container  className="imgUsersPlus justify-content-md-center" > 
                                     <i id="iconAdmin" className="fa-solid fa-book" ></i>
                                     <p className="textUsuario text-center">Crear cita</p>       
@@ -64,7 +64,7 @@ const PrincipalRecepcionIconos = () =>{
 
         
                 <Container>    
-                    <Link to={"#/"}>
+                    <Link to={"/recepcion/vercita"}>
                     <Container  className="imgUsers justify-content-md-center" > 
                             <i id="iconAdmin" className="fa-solid fa-calendar-days" ></i>
                             <p className="textUsuario text-center">Ver Citas</p>       
@@ -75,7 +75,7 @@ const PrincipalRecepcionIconos = () =>{
 
 
 
-                    <Button  onClick={()=>enviarAccion(cerrarSesion())} variant="outline-primary mt-3" id="bottonCerrarSesion"  >Cerrar sesion</Button>
+                    <Button  onClick={()=>enviarAccion(cerrarSesion())} variant="outline-primary mt-3" id="bottonCerrarSesion"  >Cerrar sesión</Button>
            
 
                 </Col>  

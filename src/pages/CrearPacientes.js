@@ -2,27 +2,28 @@ import axios from "axios";
 import { useState } from "react";
 import { Alert, Card, Col, Container, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { RegistrarseFormulario } from "../components/RegistrarseFormulario"
-import { CREAR_USUARIO_POST } from "../Connections/helpers/endpoint";
+import { CrearPacientesFormulario } from "../components/CrearPacienteFormulario";
 
-const Registrarusuario =()=>{
+import { CREAR_PACIENTE_POST } from "../Connections/helpers/endpoint";
+
+const CrearPaciente =()=>{
     
     const [errores, setErrores] = useState({})
     const navegar = useNavigate()
     
-    const registro = ({nombres,apellidos,tipoDocumento,documento,fechaDeNacimiento,email,direccion,celular,nombreRol,username,password}) =>{
+    const crearUsuario = ({nombre,apellido,sexo,fechaDeNacimiento,edad,numeroDeDocumento,tipoDeDocumento,telefonoDeContacto,correo,direccion}) =>{
 
-        const errores= {}
-        setErrores(errores)
+        const error= {}
+        setErrores(error)
         
-        axios.post(CREAR_USUARIO_POST,
-            {nombres,apellidos,tipoDocumento,documento,fechaDeNacimiento,email,direccion,celular,nombreRol,username,password},
+        axios.post(CREAR_PACIENTE_POST,
+            {nombre,apellido,sexo,fechaDeNacimiento,edad,numeroDeDocumento,tipoDeDocumento,telefonoDeContacto,correo,direccion},
             {headers: {'Accept': 'application/json'  , "Content-Type":"application/json"}})
             .then(respuesta=>{
                 console.log(respuesta)
-                navegar("/admin/verusuarios")
-            }).catch(error=>{
-                setErrores({new: error.response.data.message})
+                navegar("/recepcion")
+            }).catch(err=>{
+                setErrores({err})
 
             })
     } 
@@ -31,17 +32,18 @@ const Registrarusuario =()=>{
         <Row className="row justify-content-md-center">
             <Col sm="12" md="8" lg="6">
                 
-                <h3 className="text-center">Registrar Usuario</h3>
-                <Link to={"/admin"} className="AtrasIcon">
+                <h3 className="text-center">Crear Paciente</h3>
+                <Link to={"/recepcion"} className="AtrasIcon">
                     <i id="AtrasIcon" className="fa-solid fa-chevron-left">back</i>
                 </Link>
                 <Card.Body>
 
                         {errores.crear && <Alert variant="danger">{errores}</Alert>}
 
-                        <RegistrarseFormulario errores={errores} callback={registro} />
+                        <CrearPacientesFormulario errores={errores} callback={crearUsuario} />
 
                 </Card.Body>
+
 
             </Col>
         </Row>
@@ -51,4 +53,4 @@ const Registrarusuario =()=>{
     
 }
 
-export {Registrarusuario}
+export {CrearPaciente}

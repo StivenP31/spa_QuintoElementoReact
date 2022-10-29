@@ -29,7 +29,7 @@ const Footer = () => {
           <h5 className='text-uppercase'>integrantes</h5>
 
           <p>
-      *Carime Caroll* - No se de donde sacas tiempo para tantas cosas, *Lolys Sabalza* -como tienes cabeza para esto despues 
+      *Carime Carroll* - No se de donde sacas tiempo para tantas cosas, *Lolys Sabalza* -como tienes cabeza para esto despues 
       de un dia con pacientes *Eder Perez* - Este pequeño me ah sorprendido y me ah echo enojar tambien, te queremos
       *jonathan Estiben* - Pobre me lo tienen volteando y calvo pero pide permiso para ayudarnos *Noe* - compañero siempre
       dispuesto a ayudar
