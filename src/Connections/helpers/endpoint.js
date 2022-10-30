@@ -15,7 +15,7 @@ export const VER_PACIENTE_GET=API_URL+"/recepcion/verpacientes"
 export const CREAR_CITA_POST=API_URL+"/citas"
 export const VER_CITAS_GET=API_URL+"/citas/leercitas"
 export const DETALLE_PACIENTE_GET=API_URL+"/recepcion"
-
+export const DETALLE_CITA_GET=API_URL+"/citas"
 
 
 

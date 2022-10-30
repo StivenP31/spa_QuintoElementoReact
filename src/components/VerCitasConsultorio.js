@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
+import { Link } from 'react-router-dom';
 
 
 
@@ -12,7 +13,7 @@ const VerCitaConsultorio =({cita})=> {
         
     <Container>
 
-          
+        <Link to={`/cita/${cita.idCita}`}>
             <Table className='TablaUsuarios'  bordered hover size="sm" >
                     
                     <thead className='TituloTabla'>
@@ -43,7 +44,7 @@ const VerCitaConsultorio =({cita})=> {
             </Table>
         
          
-
+            </Link>
     </Container>
 
     return VerCita;
