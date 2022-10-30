@@ -34,7 +34,7 @@ const PrincipalDoctorIconos = () =>{
                         
                 
                                 <Container>    
-                                        <Link to={"#/"}>
+                                        <Link to={"/citas/consultorio/102"}>
                                         <Container  className="imgUsersPlus justify-content-md-center" > 
                                                 <i id="iconAdmin" className="fa-solid fa-hospital" ></i>
                                                 <p className="textUsuario text-center">Consultorio 102</p>       
