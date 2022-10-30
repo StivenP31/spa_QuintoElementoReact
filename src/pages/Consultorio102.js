@@ -30,7 +30,7 @@ function Consultorio102 (){
         <Container className="mt-4 mb-4 ">
         <Row className="row justify-content-md-center">
             <Col sm="10" md="10" lg="8">
-            <h3 className="text-center">Citas consultorio 101</h3>
+            <h3 className="text-center">Citas consultorio 102</h3>
             <Link to={"/doctor"} className="AtrasIcon">
                 <i id="AtrasIcon" className="fa-solid fa-chevron-left">back</i>
             </Link>

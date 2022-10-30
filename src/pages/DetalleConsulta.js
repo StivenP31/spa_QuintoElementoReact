@@ -77,7 +77,7 @@ const DetalleConsulta =()=>{
                             <FloatingLabel  className="form-control" >{cita.notas}</FloatingLabel>
                         </Container>
 
-                        <Button id="botonHistorial" href="#/" variant="outline-info">Historial clinico</Button>
+                        <Button id="botonHistorial" variant="secondary">Historial clinico</Button>
                 </Container>         
         
                 
