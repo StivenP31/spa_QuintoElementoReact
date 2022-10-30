@@ -24,6 +24,8 @@ import { PacienteDetalle } from '../pages/DetallePaciente.';
 import { PrincipalDoctor } from '../pages/PrincipalDoctor';
 
 import { Consultorio101 } from '../pages/Consultorio101';
+import { Consultorio102 } from '../pages/Consultorio102';
+import { Consultorio103 } from '../pages/Consultorio103';
 
 
 getAuthentucacionToken()
@@ -57,6 +59,8 @@ function App() {
           <Route path='/doctor' element={<PrincipalDoctor/>}/>  
           <Route path='/recepcion/crearhistorial' element={<CrearHistorial/>}/>
           <Route path='/citas/consultorio/101' element={<Consultorio101/>}/>
+          <Route path='/citas/consultorio/102' element={<Consultorio102/>}/>
+          <Route path='/citas/consultorio/103' element={<Consultorio103/>}/>
           </Route>
         </Routes>
         <Footer />
