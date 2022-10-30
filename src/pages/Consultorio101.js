@@ -4,7 +4,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import { CONSULTORIO_GET} from "../Connections/helpers/endpoint";
-import { VerCitaConsultorio } from "./VerCitasConsultorio";
+import { VerCitaConsultorio } from "../components/VerCitasConsultorio";
 
 
 function Consultorio101 (){

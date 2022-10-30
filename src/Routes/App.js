@@ -23,7 +23,7 @@ import { VerCitas } from '../pages/VerCitas';
 import { PacienteDetalle } from '../pages/DetallePaciente.';
 import { PrincipalDoctor } from '../pages/PrincipalDoctor';
 
-import { Consultorio101 } from '../components/Consultorio101';
+import { Consultorio101 } from '../pages/Consultorio101';
 
 
 getAuthentucacionToken()
